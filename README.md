@@ -7,11 +7,10 @@ USAGE
 2) Clone/Download this repository
 3) Compile this project:
 
-`$ cd /path/to/folder/` <br/>
-`$ mkdir ./build` <br/>
-`$ cd build` <br/>
-`$ cmake ..` <br/>
-`$ make` <br/>
+`$ cd /path/to/folder/` 
+`$ mkdir ./build` 
+`$ cd build` 
+`$ cmake ..`
+`$ make` 
 4) run the example
-
 `./mybehaviortreeproject`
