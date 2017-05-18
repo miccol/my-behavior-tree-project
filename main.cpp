@@ -1,8 +1,6 @@
 #include <iostream>
 #include <behavior_tree.h>
 
-
-
 class MyCondition : public BT::ConditionNode
 {
 public:
@@ -19,7 +17,6 @@ MyCondition::MyCondition(std::string name) : BT::ConditionNode::ConditionNode(na
 BT::ReturnStatus MyCondition::Tick()
 {
     std::cout << "The Condition is true" << std::endl;
-
     return BT::SUCCESS;
 }
 
@@ -50,14 +47,14 @@ BT::ReturnStatus MyAction::Tick()
 
     std::cout << "The Action is doing some others operations" << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(5));
-    if (is_halted())
+    //if (is_halted())
     {
         return BT::HALTED;
     }
 
     std::cout << "The Action is doing more operations" << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(5));
-    if (is_halted())
+    //if (is_halted())
     {
         return BT::HALTED;
     }
@@ -76,8 +73,8 @@ int main(int argc, char *argv[])
 {
 
     BT::SequenceNode* seq = new BT::SequenceNode("Sequence");
-    MyCondition* my_con_1 = new MyCondition("My condition");
-    MyAction* my_act_1 = new MyAction("My action");
+    MyCondition* my_con_1 = new MyCondition("Condition");
+    MyAction* my_act_1 = new MyAction("Action");
     int tick_time_milliseconds = 1000;
 
     seq->AddChild(my_con_1);
